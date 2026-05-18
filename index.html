@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounting Branches - Final Review Exam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .answer-box { display: none; }
+    .answers-visible .answer-box { display: block; }
+    @media print {
+      .no-print { display: none !important; }
+      .shadow-lg, .shadow-md { box-shadow: none !important; }
+      body { background: white !important; color: black !important; }
+      .bg-gray-50, .bg-white, .bg-blue-50, .bg-green-50, .bg-yellow-50 { background-color: white !important; }
+      .border-l-4 { border-left-width: 2px !important; }
+      textarea { border: 1px solid #ccc !important; background: transparent !important; }
+    }
+    textarea { resize: vertical; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 md:p-8 min-h-screen">
+
+  <!-- Controls -->
+  <div class="max-w-4xl mx-auto mb-6 flex flex-wrap gap-3 justify-center no-print">
+    <button onclick="toggleAnswers()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer">
+      👁️ Show / Hide Answers
+    </button>
+    <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-900 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer">
+      🖨️ Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md mb-8 border-l-4 border-blue-600">
+    <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Comprehensive Accounting Branches Review Exam</h1>
+    <div class="mt-3 flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>📅 Date: _______________</span>
+      <span>👤 Name: _______________</span>
+      <span>⏱️ Time: 75 min</span>
+      <span>📊 Total: 100 Marks</span>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto space-y-8">
+
+    <!-- PART 1 -->
+    <section class="bg-white p-6 rounded-xl shadow-md">      <h2 class="text-xl font-bold mb-4 text-blue-800">🔹 Part 1: Branch Identification (10 Marks)</h2>
+      <p class="mb-3 text-gray-600">Write the most suitable accounting branch for each scenario.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse border border-gray-200">
+          <thead class="bg-gray-100">
+            <tr><th class="border p-2 w-10">#</th><th class="border p-2 text-left">Scenario</th><th class="border p-2 w-32">Answer</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="border p-2 text-center">1</td><td class="border p-2">Calculate cost per unit to set selling price</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">2</td><td class="border p-2">External investor requests balance sheet & income statement</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">3</td><td class="border p-2">Report how public funds were spent on healthcare</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">4</td><td class="border p-2">Detect if an employee is embezzling funds</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">5</td><td class="border p-2">Report to decide whether to launch a new product line</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">6</td><td class="border p-2">Track donations restricted for specific projects</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">7</td><td class="border p-2">File annual corporate tax return with tax authority</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">8</td><td class="border p-2">Independent party checks if statements follow IFRS</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">9</td><td class="border p-2">Implement software to automate invoice processing</td><td class="border p-2 bg-yellow-50"></td></tr>
+            <tr><td class="border p-2 text-center">10</td><td class="border p-2">Measure carbon footprint & social impact for report</td><td class="border p-2 bg-yellow-50"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="answer-box mt-4 p-3 bg-green-50 border border-green-200 rounded text-sm text-green-800">
+        ✅ <strong>Answers:</strong> 1-Cost | 2-Financial | 3-Governmental | 4-Forensic | 5-Managerial | 6-Fiduciary | 7-Tax | 8-Auditing | 9-AIS | 10-Sustainability
+      </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold mb-4 text-blue-800">🔹 Part 2: Concept Application - MCQ (10 Marks)</h2>
+      <ol class="space-y-4 text-sm">
+        <li><strong>1.</strong> Which branch is PRIMARILY concerned with internal decision-making?<br>
+          a) Financial Accounting   b) Managerial Accounting   c) Tax Accounting   d) Auditing
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>2.</strong> Cost Accounting is MOST useful for:<br>
+          a) Reports for shareholders   b) Break-even & pricing decisions   c) Filing tax returns   d) Detecting fraud
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>3.</strong> To ensure records are free from material misstatement, hire:<br>
+          a) Tax consultant   b) Internal manager   c) External auditor   d) Forensic accountant
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: c</div>
+        </li>
+        <li><strong>4.</strong> TRUE about Governmental Accounting:<br>
+          a) Maximizes profit   b) Uses fund accounting for restricted resources   c) Ignores budget compliance   d) Identical to Financial Accounting
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>5.</strong> Sustainability Accounting reports on:<br>
+          a) Only financial performance   b) ESG factors (Environmental, Social, Governance)   c) Only tax obligations   d) Employee salaries
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>        <li><strong>6.</strong> Accounting Information Systems (AIS) primarily help with:<br>
+          a) Reducing the need for accountants   b) Automating data collection, processing, and reporting   c) Avoiding tax payments   d) Replacing managerial judgment
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>7.</strong> Forensic Accounting is often used in:<br>
+          a) Preparing monthly budgets   b) Legal disputes and fraud investigations   c) Calculating depreciation   d) Filing VAT returns
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>8.</strong> The main difference between Financial and Managerial Accounting is:<br>
+          a) Financial is for internal use; Managerial is for external users   b) Financial follows GAAP/IFRS; Managerial is flexible for internal needs   c) Financial is optional; Managerial is mandatory   d) There is no difference
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>9.</strong> Fiduciary Accounting is required when:<br>
+          a) A company sells products online   b) Someone manages assets on behalf of another party (e.g., trust, estate)   c) A business calculates its cost of goods sold   d) An organization prepares its annual report
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+        <li><strong>10.</strong> Which branch would help a company decide whether to make or buy a component?<br>
+          a) Tax Accounting   b) Cost/Managerial Accounting   c) Auditing   d) Governmental Accounting
+          <div class="answer-box text-green-700 mt-1 font-medium">✅ Answer: b</div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold mb-4 text-blue-800">🔹 Part 3: Case Study Analysis (15 Marks)</h2>
+      <div class="bg-blue-50 p-4 rounded-lg mb-4 border border-blue-200 text-sm">
+        <strong>Case: GreenTech Solutions</strong><br>
+        GreenTech manufactures solar panels. They need to: evaluate new market profitability, provide audited statements to investors, undergo a tax review, implement real-time inventory software, and publish an ESG impact report.
+      </div>
+      <ol class="space-y-4 text-sm">
+        <li>Which branch should evaluate new market profitability? Why? (2-3 sentences)<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-16 text-sm" placeholder="Your answer..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Managerial/Cost Accounting – analyzes costs, revenues & break-even for strategic decisions.</div>
+        </li>
+        <li>What statements for investors? Which branch ensures reliability?<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-16 text-sm" placeholder="Your answer..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Financial Statements (Balance Sheet, Income Statement, Cash Flow); Auditing ensures reliability.</div>
+        </li>
+        <li>Which branch handles tax review? Name TWO documents it prepares.<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-16 text-sm" placeholder="Your answer..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Tax Accounting; documents: Tax Returns, Tax Provision/Compliance Reports.</div>
+        </li>
+        <li>System/branch for real-time tracking? Give ONE benefit.<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-16 text-sm" placeholder="Your answer..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ AIS; benefit: real-time data, reduced errors, automated reporting.</div>
+        </li>
+        <li>Which branch for environmental report? TWO non-financial metrics?<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-16 text-sm" placeholder="Your answer..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Sustainability Accounting; metrics: CO₂ emissions reduced, % recycled materials used.</div>        </li>
+      </ol>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold mb-4 text-blue-800">🔹 Part 4: Practical Problems (50 Marks)</h2>
+      <div class="grid gap-6">
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 1: Financial Accounting (5M)</strong>
+          <p class="text-sm mt-1">Assets: $500k | Liabilities: $200k | Revenues: $350k | Expenses: $280k | Withdrawals: $30k. Calculate Ending Owner's Equity.</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Beg Equity = 500k-200k=300k | Net Income=350k-280k=70k | End Equity=300k+70k-30k=$340k</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 2: Managerial Accounting (5M)</strong>
+          <p class="text-sm mt-1">Special order: 1,000 units @ $15 | VC/unit: $9 | FC: $50k (unaffected) | Normal price: $25. Accept?</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Rev: 15k | Cost: 9k | Profit: $6k → YES, accept (FC irrelevant).</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 3: Cost Accounting (5M)</strong>
+          <p class="text-sm mt-1">DM: $40k | DL: $30k | MOH: $20k | Beg WIP: $5k | End WIP: $7k | Units: 5,000. Find COGM & Cost/Unit.</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Total Mfg=90k | COGM=5k+90k-7k=$88k | Cost/Unit=88k/5k=$17.60</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 4: Tax Accounting (5M)</strong>
+          <p class="text-sm mt-1">Acct Profit: $200k | Non-deductible: $15k | Tax-exempt: $10k | Rate: 25%. Find Taxable Income & Tax Payable.</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Taxable=200k+15k-10k=$205k | Tax=205k×25%=$51,250</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 5: Auditing (5M)</strong>
+          <p class="text-sm mt-1">Book Inv: $150k | Sample (10%): $15k | Errors: $450 overstatement. Materiality: $3k. Estimate total error & is it material?</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Error rate=3% | Total error=$4,500 | $4,500 > $3,000 → MATERIAL</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 6: Forensic Accounting (5M)</strong>
+          <p class="text-sm mt-1">Expected daily sales: $2k | Actual deposited (5 days): $8.5k | Employee handled 3 days. Estimate skimmed amount & suggest 1 control.</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Expected=10k | Shortage=$1.5k | Control: Segregation of duties + pre-numbered receipts</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 7: Governmental Accounting (5M)</strong>
+          <p class="text-sm mt-1">Beg Fund: $80k | Rev: $120k | Exp: $95k | Encumbrances: $15k. Calculate ending fund balance & why track encumbrances?</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ End=80k+120k-95k-15k=$90k | Encumbrances prevent overspending appropriated budget</div>
+        </div>        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 8: AIS (5M)</strong>
+          <p class="text-sm mt-1">System: 1,200 invoices ($240k). Physical review: 5 invoices ($1k) issued but unrecorded. Error type? Prevention control?</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Completeness error | Control: Sequential numbering + gap detection + daily reconciliation</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 9: Sustainability (5M)</strong>
+          <p class="text-sm mt-1">Profit: $500k | Env savings: $80k | Social inv: $45k | Carbon offsets: $15k. Calculate adjusted performance & 2 non-financial metrics.</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ Adj=500k+80k-(45k+15k)=$520k | Metrics: CO₂ reduced, % renewable materials</div>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4">
+          <strong>Problem 10: Fiduciary Accounting (5M)</strong>
+          <p class="text-sm mt-1">Beg Assets: $300k | Income: $18k | Expenses: $5k | Distribution: $50k. Prepare Statement of Changes in Fiduciary Net Position.</p>
+          <textarea class="w-full mt-2 p-2 border rounded h-20 text-sm" placeholder="Calculation..."></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ End=300k+18k-5k-50k=$263k | Tracks assets held for others, not owned</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 5 -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold mb-4 text-blue-800">🔹 Part 5: Critical Thinking (15 Marks)</h2>
+      <ol class="space-y-4 text-sm">
+        <li><strong>Compare Financial vs Managerial Accounting:</strong> Primary users, Time focus, Regulatory standards.<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-24 text-sm" placeholder="Your comparison..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Financial: External users, Past focus, GAAP/IFRS mandatory | Managerial: Internal users, Future focus, Flexible/No standards</div>
+        </li>
+        <li><strong>Why understand MULTIPLE branches?</strong> Give a practical example.<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-24 text-sm" placeholder="Your example..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Real problems are integrated. Example: Launching a product needs Cost (pricing), Managerial (feasibility), Tax (compliance), Financial (reporting).</div>
+        </li>
+        <li><strong>Advise a startup:</strong> Which 2 branches to prioritize first? Justify.<br>
+          <textarea class="w-full mt-1 p-2 border rounded h-24 text-sm" placeholder="Your recommendation..."></textarea>
+          <div class="answer-box text-green-700 mt-1">✅ Financial + Managerial/Cost. Startups need investor reporting (Financial) AND operational decision-making to survive/grow (Managerial).</div>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="max-w-4xl mx-auto mt-10 mb-8 text-center text-gray-500 text-sm no-print">
+    © Accounting Review Exam | Designed for Final Revision | Print-friendly & Interactive
+  </footer>
+
+  <script>
+    function toggleAnswers() {
+      document.body.classList.toggle('answers-visible');
+    }  </script>
+</body>
+          </html>
