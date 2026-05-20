@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accounting Branches - Final Review Exam</title>
+  <title>Accounting Branches - Final Exam</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
@@ -47,6 +49,7 @@
       <span>📊 Total: 100 Marks</span>
     </div>
   </header>
+
   <main class="max-w-4xl mx-auto space-y-8">
 
     <!-- PART 1 -->
@@ -96,7 +99,8 @@
           <div class="answer-box text-green-700 mt-1 font-medium">✅ b</div>
         </li>
         <li><strong>3.</strong> To ensure records are free from material misstatement, hire:<br>
-          <label class="ml-4 cursor-pointer"><input type="radio" name="q3" value="a" class="mr-1"> a) Tax consultant</label>          <label class="ml-4 cursor-pointer"><input type="radio" name="q3" value="b" class="mr-1"> b) Internal manager</label>
+          <label class="ml-4 cursor-pointer"><input type="radio" name="q3" value="a" class="mr-1"> a) Tax consultant</label>
+          <label class="ml-4 cursor-pointer"><input type="radio" name="q3" value="b" class="mr-1"> b) Internal manager</label>
           <label class="ml-4 cursor-pointer"><input type="radio" name="q3" value="c" class="mr-1"> c) External auditor</label>
           <label class="ml-4 cursor-pointer"><input type="radio" name="q3" value="d" class="mr-1"> d) Forensic accountant</label>
           <div class="answer-box text-green-700 mt-1 font-medium">✅ c</div>
@@ -145,7 +149,8 @@
         </li>
         <li><strong>10.</strong> Branch to decide make vs buy:<br>
           <label class="ml-4 cursor-pointer"><input type="radio" name="q10" value="a" class="mr-1"> a) Tax</label>
-          <label class="ml-4 cursor-pointer"><input type="radio" name="q10" value="b" class="mr-1"> b) Cost/Managerial</label>          <label class="ml-4 cursor-pointer"><input type="radio" name="q10" value="c" class="mr-1"> c) Auditing</label>
+          <label class="ml-4 cursor-pointer"><input type="radio" name="q10" value="b" class="mr-1"> b) Cost/Managerial</label>
+          <label class="ml-4 cursor-pointer"><input type="radio" name="q10" value="c" class="mr-1"> c) Auditing</label>
           <label class="ml-4 cursor-pointer"><input type="radio" name="q10" value="d" class="mr-1"> d) Governmental</label>
           <div class="answer-box text-green-700 mt-1 font-medium">✅ b</div>
         </li>
@@ -181,7 +186,8 @@
           <div class="answer-box text-green-700 mt-1">✅ Sustainability; CO₂ reduced, % renewable/recycled materials.</div>
         </li>
       </ol>
-                                               </section>
+    </section>
+
     <!-- PART 4 -->
     <section class="bg-white p-6 rounded-xl shadow-md">
       <h2 class="text-xl font-bold mb-4 text-blue-800">🔹 Part 4: Practical Problems (50 Marks)</h2>
@@ -231,7 +237,8 @@
         <div class="border-l-4 border-indigo-500 pl-4">
           <strong>Problem 8: AIS (5M)</strong>
           <p class="text-sm mt-1">Recorded:1200 invoices | Unrecorded:5 invoices ($1k). Total unrecorded value?</p>
-          <textarea id="p4q8" class="w-full mt-2 p-2 border rounded h-16 text-sm" placeholder="Number only"></textarea>          <div class="answer-box text-green-700 mt-2 text-sm">✅ 1000</div>
+          <textarea id="p4q8" class="w-full mt-2 p-2 border rounded h-16 text-sm" placeholder="Number only"></textarea>
+          <div class="answer-box text-green-700 mt-2 text-sm">✅ 1000</div>
         </div>
         <div class="border-l-4 border-indigo-500 pl-4">
           <strong>Problem 9: Sustainability (5M)</strong>
@@ -273,6 +280,10 @@
         📝 Submit & Auto-Grade Exam
       </button>
       <p class="text-xs text-gray-500 mt-2">Results will appear instantly. Open-ended questions use keyword/number matching.</p>
+      <button id="sendEmailBtn" onclick="sendResultsToEmail()" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white text-lg px-8 py-3 rounded-xl font-bold shadow-lg transition transform hover:scale-105 cursor-pointer hidden">
+        📧 Send Results to My Gmail
+      </button>
+      <p id="emailStatus" class="text-sm mt-2 text-center font-medium"></p>
     </div>
 
   </main>
@@ -280,7 +291,8 @@
   <!-- Results Panel -->
   <div id="results-panel" class="max-w-4xl mx-auto mt-8 bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500 fade-in no-print">
     <h2 class="text-2xl font-bold text-gray-900 mb-4">📊 Exam Results</h2>
-    <div class="grid md:grid-cols-2 gap-4 mb-6">      <div class="bg-gray-50 p-4 rounded-lg">
+    <div class="grid md:grid-cols-2 gap-4 mb-6">
+      <div class="bg-gray-50 p-4 rounded-lg">
         <p class="text-sm text-gray-600">Student</p>
         <p id="res-name" class="font-semibold text-lg">-</p>
       </div>
@@ -293,14 +305,21 @@
     <div class="bg-blue-50 p-4 rounded-lg text-sm text-blue-800">
        <strong>Note:</strong> Numerical & MCQ answers are graded exactly. Open-ended answers are checked for key accounting terms. Review the highlighted fields to see corrections.
     </div>
-    <button onclick="window.print()" class="mt-4 bg-gray-700 hover:bg-gray-800 text-white px-5 py-2 rounded-lg cursor-pointer">️ Print Results</button>
+    <button onclick="window.print()" class="mt-4 bg-gray-700 hover:bg-gray-800 text-white px-5 py-2 rounded-lg cursor-pointer">🖨️ Print Results</button>
   </div>
 
   <footer class="max-w-4xl mx-auto mt-10 mb-8 text-center text-gray-500 text-sm no-print">
-    © Accounting Review Exam | Auto-Grading Enabled | GitHub Pages Compatible
+    © Accounting Review Exam | Auto-Grading | GitHub Pages Compatible
   </footer>
 
   <script>
+    // ---------------------------------------------------------
+    // ⚠️ STEP 1: PASTE YOUR PUBLIC KEY HERE
+    // ---------------------------------------------------------
+    (function(){
+        emailjs.init("Rb3Lq8tXaFmc5YHUH"); // <--- Replace with your key
+    })();
+
     function toggleAnswers() {
       document.body.classList.toggle('answers-visible');
     }
@@ -329,7 +348,8 @@
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         const match = selected && selected.value === p2Answers[i-1];
         if(match) p2Score++;
-        const li = document.querySelector(`input[name="q${i}"]`).closest('li');        li.classList.add(match ? 'correct' : 'incorrect');
+        const li = document.querySelector(`input[name="q${i}"]`).closest('li');
+        li.classList.add(match ? 'correct' : 'incorrect');
       }
       total += p2Score;
       breakdown.push(`<div class="flex justify-between"><span>Part 2: MCQ</span><span class="font-bold">${p2Score}/10</span></div>`);
@@ -378,7 +398,8 @@
       const p5Keywords = [
         ['external','internal','past','future','gaap','ifrs','flexible','standard'],
         ['integrated','example','launch','product','decision','combine'],
-        ['financial','managerial','cost','startup','investor','survival','growth']      ];
+        ['financial','managerial','cost','startup','investor','survival','growth']
+      ];
       let p5Score = 0;
       for(let i=1; i<=3; i++){
         const txt = document.getElementById(`p5q${i}`).value.toLowerCase();
@@ -398,6 +419,9 @@
       const panel = document.getElementById('results-panel');
       panel.style.display = 'block';
       panel.scrollIntoView({ behavior: 'smooth' });
+
+      // Show send button
+      document.getElementById('sendEmailBtn').classList.remove('hidden');
     }
 
     function highlightField(id, isCorrect) {
@@ -405,7 +429,60 @@
       el.classList.remove('correct', 'incorrect');
       el.classList.add(isCorrect ? 'correct' : 'incorrect');
     }
+
+    // ---------------------------------------------------------
+    // ⚠️ STEP 2: EDIT THESE VARIABLES WITH YOUR DATA
+    // ---------------------------------------------------------
+    const SERVICE_ID = "service_w15m64i";      // e.g., service_w15m64i
+    const TEMPLATE_ID = "template_5b0u2tq";    // e.g., template_xyz789
+    const TARGET_EMAIL = "mohammedhesham872@gmail.com"; // Your email address
+
+    function sendResultsToEmail() {
+      const btn = document.getElementById('sendEmailBtn');
+      const status = document.getElementById('emailStatus');
+      btn.disabled = true;
+      btn.textContent = '⏳ Sending...';
+      status.textContent = '';
+
+      const name = document.getElementById('studentName').value || 'N/A';
+      const date = document.querySelector('input[type="text"]').value || new Date().toLocaleDateString();
+      const score = document.getElementById('res-total').textContent;
+
+      let answersHTML = '<table border="1" cellpadding="4" cellspacing="0" style="border-collapse:collapse; width:100%; font-family:Arial; font-size:13px;">';
+      answersHTML += '<tr style="background:#e5e7eb;"><th>Part</th><th>Question</th><th>Answer</th></tr>';
+      
+      for(let i=1; i<=10; i++) answersHTML += `<tr><td>Part 1</td><td>Q${i}</td><td>${document.getElementById(`p1q${i}`).value || '-'}</td></tr>`;
+      for(let i=1; i<=10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        answersHTML += `<tr><td>Part 2</td><td>MCQ ${i}</td><td>${sel ? sel.value.toUpperCase() : '-'}</td></tr>`;
+      }
+      for(let i=1; i<=5; i++) answersHTML += `<tr><td>Part 3</td><td>Case ${i}</td><td>${document.getElementById(`p3q${i}`).value || '-'}</td></tr>`;
+      for(let i=1; i<=10; i++) answersHTML += `<tr><td>Part 4</td><td>Calc ${i}</td><td>${document.getElementById(`p4q${i}`).value || '-'}</td></tr>`;
+      for(let i=1; i<=3; i++) answersHTML += `<tr><td>Part 5</td><td>Crit ${i}</td><td>${document.getElementById(`p5q${i}`).value || '-'}</td></tr>`;
+      answersHTML += '</table>';
+
+      const templateParams = {
+        to_email: TARGET_EMAIL,
+        student_name: name,
+        exam_date: date,
+        total_score: score,
+        answers_table: answersHTML
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+        .then(() => {
+          status.textContent = '✅ Sent successfully! Check your Gmail.';
+          status.style.color = '#059669';
+          btn.textContent = '✓ Sent';
+        })
+        .catch(err => {
+          status.textContent = '❌ Failed. Check console or setup.';
+          status.style.color = '#dc2626';
+          btn.disabled = false;
+          btn.textContent = ' Retry Send';
+          console.error('EmailJS Error:', err);
+        });
+    }
   </script>
 </body>
 </html>
-                                               
