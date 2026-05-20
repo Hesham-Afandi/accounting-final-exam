@@ -448,8 +448,14 @@
       const date = document.querySelector('input[type="text"]').value || new Date().toLocaleDateString();
       const score = document.getElementById('res-total').textContent;
 
-      let answersHTML = '<table border="1" cellpadding="4" cellspacing="0" style="border-collapse:collapse; width:100%; font-family:Arial; font-size:13px;">';
-      answersHTML += '<tr style="background:#e5e7eb;"><th>Part</th><th>Question</th><th>Answer</th></tr>';
+let answersHTML = `
+<table style="border:1px solid #ddd; border-collapse:collapse; width:100%; font-family:Arial; font-size:12px;">
+  <tr style="background:#4F46E5; color:white;">
+    <th style="border:1px solid #ddd; padding:8px;">Part</th>
+    <th style="border:1px solid #ddd; padding:8px;">Question</th>
+    <th style="border:1px solid #ddd; padding:8px;">Answer</th>
+  </tr>
+`;      answersHTML += '<tr style="background:#e5e7eb;"><th>Part</th><th>Question</th><th>Answer</th></tr>';
       
       for(let i=1; i<=10; i++) answersHTML += `<tr><td>Part 1</td><td>Q${i}</td><td>${document.getElementById(`p1q${i}`).value || '-'}</td></tr>`;
       for(let i=1; i<=10; i++) {
